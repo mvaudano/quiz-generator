@@ -1,0 +1,93 @@
+<!--  
+Based on Vox Media's Quiz Quartet (https://github.com/voxmedia/quiz-generator)
+
+Copyright (c) 2014 Vox Media Inc., KK Rebecca Lai, Nicole Zhu, Adam Baumgartner
+
+BSD license
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+
+<!-- TODO
+Traduction
+Sélection sur la page d'accueil du compte twitter pour le partage (variable account) -->
+
+<!doctype html>
+<html>
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>Quiz Generator</title>
+    
+    <link href="stylesheets/quiz-generator.css" rel="stylesheet" type="text/css" />
+  </head>
+  
+  <body id="top" class="index index" style="background-color: #f1f3f2;">
+    <a href="https://github.com/voxmedia/quiz-generator"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+    <div class="vox-logo"><a href="http://www.voxmedia.com/"><img src="images/voxlogo.png" style="width:40px;"></a></div>
+
+<div class="quiz-quartet">
+  <h1><img src="images/qq.png">Quiz Quartet</h1>
+</div>
+
+<div class="container">
+  <h4> Write your quiz</h4>
+
+  <h5>Choose a Quiz Type</h5>
+  <form>
+    <input type="radio" name="quiz-type" value="quiz"><label>Multiple Choice</label>
+    <input type="radio" name="quiz-type" value="flowchart"><label>Flowchart</label>
+    <input type="radio" name="quiz-type" value="binary"><label>True/False</label>
+  </form> 
+  
+  <p>Use <a id="quiz-template" target="_new">this Google Spreadsheet template</a> to write your quiz.</p>
+  <p>Once you're done editing, publish the spreadsheet to the web. Under the <b>"File"</b> menu, select <b>"Publish to the Web."</b> Click <b>"Start Publishing"</b> and copy the URL to build the quiz.</p>
+  <center><p style="font-size:0.8em">Want to test it out? Try this spreadsheet:<br><textarea style="overflow:auto;" rows="1" id="example-spreadsheet"></textarea></p></center>
+
+  <h5> Enter your spreadsheet</h5>
+  <p>Copy and paste your spreadsheet's URL here: <input type="text" id="url"></p>
+
+  <h5> Select your vertical</h5>
+  <form>
+    <input type="radio" name="pub" value="vox"><label>Vox</label>
+    <input type="radio" name="pub" value="sbnation"><label>SB Nation</label>
+    <input type="radio" name="pub" value="verge"><label>The Verge</label>
+    <input type="radio" name="pub" value="polygon"><label>Polygon</label>
+    <input type="radio" name="pub" value="eater"><label>Eater</label>
+    <input type="radio" name="pub" value="racked"><label>Racked</label>
+  </form>
+
+  <div class="embed" style="margin-top: 30px; margin-bottom: 60px;">
+    <h5>Generate, copy and paste this code into Chorus</h5>
+    <center><p><button id="build">Generate your quiz</button><p>
+    <p><textarea type="text" name="embedcode" id="embedcode" style="height: 150px; overflow:auto;"></textarea></center></p>
+  </div>
+
+  <h4>Preview</h4>
+
+</div>
+
+<div class="quiz-preview">
+  <div class="quiz-container"></div>
+</div>
+
+<script src="javascripts/jquery.min.js"></script>
+<script src="javascripts/tabletop.js"></script>
+<script src="javascripts/getdata.js"></script>
+  </body>
+</html>

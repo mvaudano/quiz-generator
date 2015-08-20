@@ -1,0 +1,104 @@
+/* line 6, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-racked.css.scss */
+.quiz-container {
+  font-family: Georgia, serif;
+  color: #4C4E4D;
+  padding-top: 20px;
+  border-top: 3px solid #c92025; }
+
+/* line 14, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-racked.css.scss */
+.qq-question {
+  font-family: "KnockoutHTF29-JuniorLiteweight", "Arial Narrow", serif;
+  font-weight: bold;
+  color: #4C4E4D;
+  font-size: 1.5em;
+  margin: 0% auto;
+  margin-bottom: 30px;
+  margin-top: 0px; }
+
+/* line 25, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-racked.css.scss */
+.qq-description {
+  font-family: Georgia, serif;
+  padding: 20px 30px 0px 30px; }
+
+/* line 31, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-racked.css.scss */
+ol.answers > li {
+  font-family: Georgia, serif;
+  padding: 0px 0px 0px 10px; }
+  /* line 35, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-racked.css.scss */
+  ol.answers > li:before {
+    font-family: "KnockoutHTF29-JuniorLiteweight", "Arial Narrow", serif;
+    font-weight: bold;
+    color: #fff;
+    background-color: #c92025;
+    width: 25px;
+    padding: 2px 0px; }
+  /* line 43, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-racked.css.scss */
+  ol.answers > li:hover {
+    background-color: #ececec; }
+
+/* line 49, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-racked.css.scss */
+.qq-button {
+  font-family: Georgia, serif;
+  color: #FFFFFF;
+  text-transform: none;
+  background-color: #4C4E4D; }
+  /* line 54, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-racked.css.scss */
+  .qq-button:hover {
+    background-color: #c92025 !important; }
+
+/* line 60, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-racked.css.scss */
+.selected {
+  background-color: #ececec;
+  color: #4C4E4D; }
+
+/* line 66, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-racked.css.scss */
+.submit-highlight {
+  background-color: #6F7170; }
+
+/* line 71, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-racked.css.scss */
+.answer p:first-child {
+  font-family: "KnockoutHTF29-JuniorLiteweight", "Arial Narrow", serif;
+  border-top: 1px solid #4c4e4d !important; }
+
+/* line 78, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-racked.css.scss */
+#social-media ul {
+  text-align: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  /* line 83, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-racked.css.scss */
+  #social-media ul li {
+    display: inline-block; }
+    /* line 86, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-racked.css.scss */
+    #social-media ul li:before {
+      background-color: transparent !important; }
+    /* line 91, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-racked.css.scss */
+    #social-media ul li a {
+      text-decoration: none; }
+      /* line 93, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-racked.css.scss */
+      #social-media ul li a svg {
+        fill: #4c4e4d; }
+        /* line 95, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-racked.css.scss */
+        #social-media ul li a svg:hover {
+          fill: #fff200; }
+        /* line 98, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-racked.css.scss */
+        #social-media ul li a svg path:hover {
+          fill: #ffffff; }
+
+/* line 108, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-racked.css.scss */
+.scorecard p:nth-child(2) {
+  font-family: "KnockoutHTF29-JuniorLiteweight", "Arial Narrow", serif; }
+
+/* line 113, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-racked.css.scss */
+.answer a {
+  color: #6d98a8;
+  text-decoration: none;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased; }
+  /* line 118, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-racked.css.scss */
+  .answer a:hover {
+    text-decoration: underline; }
+
+/* line 124, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-racked.css.scss */
+.flowchart-selected {
+  background-color: #c92025 !important; }

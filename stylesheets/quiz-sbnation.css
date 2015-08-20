@@ -1,0 +1,81 @@
+/* line 6, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-sbnation.css.scss */
+.quiz-container {
+  font-family: "Gotham SSm A", "Gotham SSm B", Arial, sans-serif;
+  text-align: center;
+  border-top: 7px solid #c52327;
+  padding-top: 20px; }
+
+/* line 14, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-sbnation.css.scss */
+.qq-question {
+  font-family: "Sentinel SSm A", "Sentinel SSm B", Georgia, serif;
+  color: #000000;
+  font-size: 1.5em;
+  margin: 0% auto;
+  margin-bottom: 20px; }
+
+/* line 23, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-sbnation.css.scss */
+.qq-description {
+  font-family: "Gotham SSm A", "Gotham SSm B", Arial, sans-serif;
+  padding: 20px 10px 0px 10px; }
+
+/* line 29, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-sbnation.css.scss */
+ol.answers > li {
+  font-family: "Gotham SSm A", "Gotham SSm B", Arial, sans-serif;
+  font-size: 0.9em; }
+  /* line 33, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-sbnation.css.scss */
+  ol.answers > li:before {
+    font-family: "Sentinel SSm A", "Sentinel SSm B", Georgia, serif;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #c52327;
+    width: 30px; }
+  /* line 40, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-sbnation.css.scss */
+  ol.answers > li:hover {
+    background-color: #EEEDED; }
+
+/* line 46, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-sbnation.css.scss */
+.qq-button {
+  font-family: ff-din-web-condensed, Helvetica, sans-serif;
+  color: #FFFFFF;
+  font-weight: 800;
+  background-color: #000000; }
+  /* line 51, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-sbnation.css.scss */
+  .qq-button:hover {
+    background-color: #c52327 !important; }
+
+/* line 57, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-sbnation.css.scss */
+.submit-highlight {
+  background-color: #6D6E70; }
+
+/* line 62, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-sbnation.css.scss */
+.answer p {
+  font-family: "Gotham SSm A", "Gotham SSm B", Arial, sans-serif;
+  font-size: 0.9em; }
+  /* line 65, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-sbnation.css.scss */
+  .answer p:first-child {
+    font-family: "Sentinel SSm A", "Sentinel SSm B", Georgia, serif; }
+
+/* line 72, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-sbnation.css.scss */
+#social-media ul li a svg:hover {
+  fill: #c52327; }
+/* line 75, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-sbnation.css.scss */
+#social-media ul li a svg path:hover {
+  fill: #FFFFFF; }
+
+/* line 81, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-sbnation.css.scss */
+.answer a {
+  color: #c52327;
+  text-decoration: none; }
+  /* line 84, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-sbnation.css.scss */
+  .answer a:hover {
+    text-decoration: underline; }
+
+/* line 90, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-sbnation.css.scss */
+.flowchart-selected {
+  background-color: #c52327 !important;
+  color: #FFFFFF !important; }
+
+/* line 97, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz-sbnation.css.scss */
+.flowchart-button:hover {
+  background-color: #c52327;
+  color: #FFFFFF; }

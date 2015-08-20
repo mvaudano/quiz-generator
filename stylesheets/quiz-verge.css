@@ -1,0 +1,101 @@
+/* line 5, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/quiz-verge.css.scss */
+.quiz-container {
+  font-family: Helvetica, sans-serif;
+  border-top: 8px solid #fb4834;
+  padding-top: 20px; }
+
+/* line 12, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/quiz-verge.css.scss */
+.qq-question {
+  font-family: ff-din-web-condensed, Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 1.5em;
+  font-style: italic;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0% auto;
+  max-width: 80%;
+  margin-bottom: 20px; }
+
+/* line 25, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/quiz-verge.css.scss */
+.qq-description {
+  padding: 20px 15px 0px 15px;
+  font-family: Helvetica, sans-serif; }
+
+/* line 31, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/quiz-verge.css.scss */
+ol.answers > li {
+  font-family: Helvetica, sans-serif;
+  font-size: 0.9em; }
+  /* line 35, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/quiz-verge.css.scss */
+  ol.answers > li:before {
+    font-family: ff-din-web-condensed, Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    font-size: 1em;
+    color: #FFFFFF;
+    line-height: 0.8em;
+    background-color: #fb4834;
+    width: 30px;
+    padding: 8px 0px 5px 0px; }
+  /* line 46, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/quiz-verge.css.scss */
+  ol.answers > li:hover {
+    background-color: #F4F0EE; }
+
+/* line 52, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/quiz-verge.css.scss */
+.qq-button {
+  font-family: ff-din-web-condensed, Helvetica, sans-serif !important;
+  font-weight: 400;
+  font-size: 1.02em;
+  color: #FFFFFF;
+  background-color: #000000; }
+  /* line 58, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/quiz-verge.css.scss */
+  .qq-button:hover {
+    background-color: #fb4834 !important; }
+
+/* line 64, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/quiz-verge.css.scss */
+.selected {
+  background-color: #DFDFE0; }
+
+/* line 69, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/quiz-verge.css.scss */
+.submit-highlight {
+  background-color: #6D6E70; }
+
+/* line 74, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/quiz-verge.css.scss */
+.answer p:first-child {
+  font-family: ff-din-web-condensed, Helvetica, sans-serif;
+  text-transform: uppercase; }
+
+/* line 80, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/quiz-verge.css.scss */
+.check-score {
+  width: 35%; }
+
+/* line 85, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/quiz-verge.css.scss */
+#social-media ul li a svg {
+  fill: #000000; }
+  /* line 87, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/quiz-verge.css.scss */
+  #social-media ul li a svg:hover {
+    fill: #fb4834; }
+  /* line 90, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/quiz-verge.css.scss */
+  #social-media ul li a svg path:hover {
+    fill: #FFFFFF; }
+
+/* line 96, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/quiz-verge.css.scss */
+.scorecard p:nth-child(2) {
+  color: #fb4834; }
+
+/* line 101, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/quiz-verge.css.scss */
+.answer a {
+  color: #fb4834;
+  text-decoration: none; }
+  /* line 104, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/quiz-verge.css.scss */
+  .answer a:hover {
+    text-decoration: underline; }
+
+/* line 110, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/quiz-verge.css.scss */
+.flowchart-selected {
+  background-color: #fb4834 !important;
+  color: #FFFFFF !important; }
+
+/* line 117, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/quiz-verge.css.scss */
+.flowchart-button:hover {
+  background-color: #fb4834;
+  color: #FFFFFF; }

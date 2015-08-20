@@ -1,0 +1,95 @@
+/* line 13, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/flowchart.css.scss */
+.quiz-container {
+  font-family: "Alight Sans", sans-serif;
+  text-align: center;
+  background-color: #FFFFFF;
+  margin: 0 auto;
+  max-width: 770px;
+  width: 100%;
+  padding-bottom: 1em; }
+
+/* line 23, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/flowchart.css.scss */
+.choices {
+  text-align: center; }
+
+/* line 27, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/flowchart.css.scss */
+div.buttons {
+  display: inline; }
+
+/* line 31, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/flowchart.css.scss */
+button.flowchart-button {
+  -o-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-family: Helvetica, sans-serif !important;
+  font-size: .9em;
+  font-weight: 100;
+  color: #414141;
+  background-color: #ececec;
+  cursor: pointer;
+  width: 120px;
+  margin: 0.1em 1em 0.4em 0;
+  border: 0;
+  padding: 12px 0px;
+  padding: 8px 10px; }
+  /* line 45, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/flowchart.css.scss */
+  button.flowchart-button:hover {
+    background-color: #f37b21; }
+
+/* line 50, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/flowchart.css.scss */
+p.down-arrow {
+  margin: 0 auto;
+  width: 100%; }
+
+/* line 55, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/flowchart.css.scss */
+.question {
+  margin-top: 2.5em !important;
+  margin-bottom: 0.4em;
+  padding: 0 0.6em 0.6em; }
+  /* line 59, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/flowchart.css.scss */
+  .question p {
+    font-family: "Balto", sans-serif;
+    font-size: 1.2em;
+    font-weight: 400; }
+
+/* line 66, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/flowchart.css.scss */
+.scorecard {
+  margin-top: 15px; }
+
+/* line 70, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/flowchart.css.scss */
+.last {
+  margin: 0 auto;
+  margin-top: 2em;
+  width: 70%;
+  min-width: 200px;
+  border-top: 1px solid #ececec; }
+  /* line 77, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/flowchart.css.scss */
+  .last p {
+    margin-top: 2em;
+    margin-bottom: 0px;
+    line-height: 1.5em; }
+
+/* line 84, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/flowchart.css.scss */
+#social-media {
+  padding: 10px; }
+
+/* line 89, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/flowchart.css.scss */
+#social-media ul {
+  text-align: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0px;
+  margin-bottom: 10px; }
+  /* line 95, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/flowchart.css.scss */
+  #social-media ul li {
+    display: inline-block; }
+    /* line 97, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/flowchart.css.scss */
+    #social-media ul li a {
+      text-decoration: none; }
+      /* line 99, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/flowchart.css.scss */
+      #social-media ul li a svg {
+        height: 2em;
+        width: 2em;
+        margin-right: 1em; }
