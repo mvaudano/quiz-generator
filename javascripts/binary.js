@@ -36,8 +36,8 @@
     $(".quiz-container").html("<div class='progress'>Question " + qnumber + "&nbsp;of&nbsp;" + input.length + "</div><div class='qq-question'><div class='qq-description'>" + input[currentQuestion].description + "</div><br><div class='question'>" + input[currentQuestion].question + "</div></div>" +
       "<ol class='answers'><li id='option-a'>" + input[currentQuestion].a + "</li>" +
       "<li id='option-d'>" + input[currentQuestion].b + "</li></ol>" +
-      "<button class='qq-button hint'>Need a hint?</button>" +
-      "<button class='qq-button submit-answer'>Submit answer</button>" +
+      "<button class='qq-button hint'>Besoin d'un indice&nbsp;?</button>" +
+      "<button class='qq-button submit-answer'>OK</button>" +
       "<div class='answer'></div>");
     selectAnswer();
     $('.hint').on('click', showHint);
