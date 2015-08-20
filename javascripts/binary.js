@@ -33,7 +33,7 @@
       pageScroll('.quiz-container');
     }
     qnumber = currentQuestion + 1;
-    $(".quiz-container").html("<div class='progress'>Question " + qnumber + "&nbsp;of&nbsp;" + input.length + "</div><div class='qq-question'><div class='qq-description'>" + input[currentQuestion].description + "</div><br><div class='question'>" + input[currentQuestion].question + "</div></div>" +
+    $(".quiz-container").html("<div class='progress'>Question " + qnumber + "&nbsp;sur&nbsp;" + input.length + "</div><div class='qq-question'><div class='qq-description'>" + input[currentQuestion].description + "</div><br><div class='question'>" + input[currentQuestion].question + "</div></div>" +
       "<ol class='answers'><li id='option-a'>" + input[currentQuestion].a + "</li>" +
       "<li id='option-d'>" + input[currentQuestion].b + "</li></ol>" +
       "<button class='qq-button hint'>Besoin d'un indice&nbsp;?</button>" +
