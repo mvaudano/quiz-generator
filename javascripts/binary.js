@@ -47,7 +47,7 @@
 
   // shows (1) out of (3) questinos
   var displayProgress = function () {
-    $('.progress').html("<div class='progress'>Question " + qnumber + "&nbsp;of&nbsp;" + input.length + "</div>");
+    $('.progress').html("<div class='progress'>Question " + qnumber + "&nbsp;sur&nbsp;" + input.length + "</div>");
   }
 
   // style changes when user selects answers
@@ -82,19 +82,19 @@
           'Q' + qnumber + ' answered correctly');
         score++;
         displayProgress();
-        $(".answer").html("<p>Correct!</p><p>" + input[currentQuestion].correct + "</p>");
+        $(".answer").html("<p>Bonne r&eacute;ponse !</p><p>" + input[currentQuestion].correct + "</p>");
 
       } else {
         trackEvent(
           'q' + qnumber + '-answered-incorrectly',
           'Q' + qnumber + ' answered incorrectly');
-        $(".answer").html("<p>Sorry!</p><p> " + input[currentQuestion].incorrect + "&nbsp;The correct answer is " + input[currentQuestion].answer + ".</p>");
+        $(".answer").html("<p>Sorry!</p><p> " + input[currentQuestion].incorrect + "&nbsp;La bonne réponse est " + input[currentQuestion].answer + ".</p>");
       }
       if (currentQuestion != (input.length-1)) {
-        $(".answer").append("<button class='qq-button next'>Next</button>");
+        $(".answer").append("<button class='qq-button next'>Suivant</button>");
         $('.next').on('click', nextQuestion);
       } else {
-        $(".answer").append("<button class='qq-button check-score'>See Final Score</button>");
+        $(".answer").append("<button class='qq-button check-score'>Voir le score final</button>");
         $('.check-score').on('click', finalScore);
       }
     }
@@ -125,7 +125,7 @@
       'Scored ' + score + ' of ' + input.length);
     trackEvent('completed', 'Quiz completed');
     if(twitteraccount !== ""){
-      via = " via "+twitteraccount;
+      via = " via @"+twitteraccount;
     }
     else via = "";
     // switch (pub) {
@@ -152,7 +152,7 @@
     // }
 
     $(".quiz-container")
-      .html("<div class='scorecard'><p>You correctly answered</p><p>" + score + "&nbsp;out of&nbsp;" + input.length + "</p><div id='social-media'><ul><li><a class=\"fb-share\" href='http://www.facebook.com/sharer.php?u=" + link + "' target='_blank'>" + facebook + "</a></li><li><a class=\"twitter-share\" href='http://twitter.com/home?status=J%27ai obtenu le score de " + score + "/" + input.length + " sur ce quiz" + link + via + "' target='_blank'>" + twitter   + "</a></li><li><a class=\"gplus-share\" href='https://plus.google.com/share?url=" + link + "' target='_blank'>" + google + "</a></li></ul></div><p>Challenge your friends!</p></div>");
+      .html("<div class='scorecard'><p>Vous avez correctement répondu &agrave;</p><p>" + score + "&nbsp; questions sur &nbsp;" + input.length + "</p><div id='social-media'><ul><li><a class=\"fb-share\" href='http://www.facebook.com/sharer.php?u=" + link + "' target='_blank'>" + facebook + "</a></li><li><a class=\"twitter-share\" href='http://twitter.com/home?status=J%27ai obtenu le score de " + score + "/" + input.length + " sur ce quiz" + link + via + "' target='_blank'>" + twitter   + "</a></li><li><a class=\"gplus-share\" href='https://plus.google.com/share?url=" + link + "' target='_blank'>" + google + "</a></li></ul></div><p>Défiez vos amis !</p></div>");
     $('.quiz-container .fb-share').click(function() {
       trackEvent('shared-on-fb', 'Quiz shared on Facebook');
     });

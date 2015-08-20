@@ -134,7 +134,7 @@
   var link = document.URL;
   var shareQuiz = function() {
     if(twitteraccount !== ""){
-      via = " via "+twitteraccount;
+      via = " via @"+twitteraccount;
     }
     else via = "";
     // switch (pub) {
