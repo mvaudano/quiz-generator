@@ -38,8 +38,8 @@
       "<li id='option-b'>" + input[currentQuestion].b + "</li>" +
       "<li id='option-c'>" + input[currentQuestion].c + "</li>" +
       "<li id='option-d'>" + input[currentQuestion].d + "</li></ol>" +
-      "<button class='qq-button hint'>Need a hint?</button>" +
-      "<button class='qq-button submit-answer'>Submit answer</button>" +
+      "<button class='qq-button hint'>Besoin d'un indice&nbsp;?</button>" +
+      "<button class='qq-button submit-answer'>OK</button>" +
       "<div class='answer'></div>");
     selectAnswer();
     $('.hint').on('click', showHint);
