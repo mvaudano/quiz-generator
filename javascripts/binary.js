@@ -124,31 +124,35 @@
       'scored-' + score + '-of-' + input.length,
       'Scored ' + score + ' of ' + input.length);
     trackEvent('completed', 'Quiz completed');
-    switch (pub) {
-      case 'vox':
-        account = voxdotcom;
-        break;
-      case 'sbnation':
-        account = sbnation;
-        break;
-      case 'verge':
-        account = theverge;
-        break;
-      case 'polygon':
-        account = polygon;
-        break;
-      case 'eater':
-        account = eater;
-      break;
-      case 'racked':
-        account = racked;
-      break;
-      default:
-        account = 'voxproduct';
+    if(twitteraccount !== ""){
+      via = " via "+twitteraccount;
     }
+    else via = "";
+    // switch (pub) {
+    //   case 'vox':
+    //     account = voxdotcom;
+    //     break;
+    //   case 'sbnation':
+    //     account = sbnation;
+    //     break;
+    //   case 'verge':
+    //     account = theverge;
+    //     break;
+    //   case 'polygon':
+    //     account = polygon;
+    //     break;
+    //   case 'eater':
+    //     account = eater;
+    //   break;
+    //   case 'racked':
+    //     account = racked;
+    //   break;
+    //   default:
+    //     account = 'voxproduct';
+    // }
 
     $(".quiz-container")
-      .html("<div class='scorecard'><p>You correctly answered</p><p>" + score + "&nbsp;out of&nbsp;" + input.length + "</p><div id='social-media'><ul><li><a class=\"fb-share\" href='http://www.facebook.com/sharer.php?u=" + link + "' target='_blank'>" + facebook + "</a></li><li><a class=\"twitter-share\" href='http://twitter.com/home?status=I scored " + score + "/" + input.length + " on this quiz " + link + " via @" + account + "' target='_blank'>" + twitter   + "</a></li><li><a class=\"gplus-share\" href='https://plus.google.com/share?url=" + link + "' target='_blank'>" + google + "</a></li></ul></div><p>Challenge your friends!</p></div>");
+      .html("<div class='scorecard'><p>You correctly answered</p><p>" + score + "&nbsp;out of&nbsp;" + input.length + "</p><div id='social-media'><ul><li><a class=\"fb-share\" href='http://www.facebook.com/sharer.php?u=" + link + "' target='_blank'>" + facebook + "</a></li><li><a class=\"twitter-share\" href='http://twitter.com/home?status=J%27ai obtenu le score de " + score + "/" + input.length + " sur ce quiz" + link + via + "' target='_blank'>" + twitter   + "</a></li><li><a class=\"gplus-share\" href='https://plus.google.com/share?url=" + link + "' target='_blank'>" + google + "</a></li></ul></div><p>Challenge your friends!</p></div>");
     $('.quiz-container .fb-share').click(function() {
       trackEvent('shared-on-fb', 'Quiz shared on Facebook');
     });
@@ -161,7 +165,7 @@
   }
 
   // attach quiz and vertical-specific stylesheets
-  $('head').append('<link rel="stylesheet" href="stylesheets/quiz.css" type="text/css" />');
+  $('head').append('<link rel="stylesheet" href="'+cdn+'stylesheets/quiz.css" type="text/css" />');
   //$('head').append('<link rel="stylesheet" href="stylesheets/quiz.css" type="text/css" />');
   $('head').append('<link rel="stylesheet" href="' + pubStylesheet + '" type="text/css" />');
 

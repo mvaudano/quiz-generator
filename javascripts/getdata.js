@@ -74,14 +74,30 @@
   function getStylesheet() {
   	pub = $('input[name="pub"]:checked').val();
     $('body').append('<script type="text/javascript">var pub ="' + pub + '"</script>');
-    pubStylesheet = "stylesheets/quiz-" + pub + ".css";
-    // pubStylesheet = "/stylesheets/quiz-" + pub + ".css";
+    pubStylesheet = cdn+"stylesheets/quiz-" + pub + ".css";
+    cdn = $('input#cdn').val();
+    twitteraccount = $('input#twitter').val().substring(1);
   }
 
   function embed(input) {
-    $("#embedcode").html("&lt;div class='quiz-container'></div>&lt;script type='text/javascript'>window.jQuery || document.write(\"&lt;script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'>&lt;&#92;/script>\");&lt;/script>&lt;script type='text/javascript'>var input = " + JSON.stringify(input) + "; var pubStylesheet = '" + pubStylesheet + "'; var pub = '" + pub + "'; &lt;/script>&lt;script src='javascripts/" + quizType + ".js'>&lt;/script>");
-    // $("#embedcode").html("&lt;div class='quiz-container'></div>&lt;script type='text/javascript'>window.jQuery || document.write('&lt;script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'>&lt;&#92;/script>');&lt;/script>&lt;script type='text/javascript'>var input = " + JSON.stringify(input) + "; var pubStylesheet = '" + pubStylesheet + "';&lt;/script>&lt;script src='/javascripts/" + quizType + ".js'>&lt;/script>");
+    pubStylesheet = cdn+"stylesheets/quiz-" + pub + ".css";
+    embedcode = "&lt;div class='quiz-container'></div>&lt;script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'>&lt;/script>&lt;script type='text/javascript'>var input = " + JSON.stringify(input) + "; var pubStylesheet = '" + pubStylesheet + "'; var pub = '" + pub + "'; var cdn = '" + cdn + "'; var twitteracount = '" + $('input#twitter').val().substring(1) + "'; &lt;/script>&lt;script src='"+cdn+"javascripts/" + quizType + ".js'>&lt;/script>";
+    $("#embedcode").html(embedcode)
+    downloadHTML(input)
     addJS();
+  }
+
+  function downloadHTML(input) {
+     downloadcode = "<html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n</head>\n<body id=\"articleBody\">\n<div class='quiz-container'></div>\n<script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>\n<script type='text/javascript'>\nvar input = " + JSON.stringify(input) + ";\nvar pubStylesheet = '" + pubStylesheet + "';\nvar pub = '" + pub + "';\nvar cdn = '" + cdn + "';\n</script>\n<script src='"+cdn+"javascripts/" + quizType + ".js'></script>\n</body>\n</html>";
+    var zip = new JSZip();
+    zip.file("index.html", downloadcode);
+    var content = zip.generate({type:"blob"});
+    $("#downloadhtml").removeAttr("disabled")
+    $("#downloadhtml").click(function(){
+       saveAs(content, "quiz.zip");
+    })
+   
+    
   }
 
   function buildquiz(){

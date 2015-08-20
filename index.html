@@ -18,7 +18,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 
 <!-- TODO
-Téléchargement du zip avec les fichiers
 Traduction
 Sélection sur la page d'accueil du compte twitter pour le partage (variable account) -->
 
@@ -42,21 +41,22 @@ Sélection sur la page d'accueil du compte twitter pour le partage (variable acc
     <a href="https://github.com/voxmedia/quiz-generator"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
     <div class="vox-logo"><a href="http://www.voxmedia.com/"><img src="images/voxlogo.png" style="width:40px;"></a></div>
 
+
 <div class="quiz-quartet">
   <h1><img src="images/qq.png">Quiz Quartet</h1>
 </div>
 
 <div class="container">
-  <h4>Composez votre quiz</h4>
+  <h4>Version francophone</h4>
 
   <h5>Choisissez un type de quiz</h5>
   <form>
-    <input type="radio" name="quiz-type" value="quiz"><label>Questionnaire à choix multiples (QCM, 4 réponses possibles)</label><br />
-    <label><input type="radio" name="quiz-type" value="flowchart"><label>Flowchart (arbre de décision)</label><br />
+    <input type="radio" name="quiz-type" value="quiz"><label>Questionnaire à choix multiples (QCM, 4 réponses possibles)</label><br>
+    <input type="radio" name="quiz-type" value="flowchart"><label>Flowchart  (arbre de décision)</label><br>
     <input type="radio" name="quiz-type" value="binary"><label>Binaire (vrai/faux, noir/blanc, 2 réponses possibles)</label>
   </form> 
-  <p>&nbsp;</p>
-  <p>Utilisez <a id="quiz-template" target="_new">ce modèle de Google Spreadsheet</a> pour composer votre quiz.</p>
+  
+   <p>Utilisez <a id="quiz-template" target="_new">ce modèle de Google Spreadsheet</a> pour composer votre quiz.</p>
   <p>Une fois que vous l'avez édité, publiez votre spreadsheet sur le web ("Fichier" > "Publier sur le web" > <b>Commencer à publier) et récupérez l'URL du spreadsheet.</p>
   <center><p style="font-size:0.8em">Envie de tester ? Essayez ce spreadsheet :<br><textarea style="overflow:auto;" rows="1" id="example-spreadsheet"></textarea></p></center>
 
@@ -65,13 +65,20 @@ Sélection sur la page d'accueil du compte twitter pour le partage (variable acc
 
   <h5> Selectionnez votre thème</h5>
   <form>
-    <input type="radio" name="pub" value="vox"><label>Vox</label>
+    <input type="radio" name="pub" value="vox" checked><label>Vox</label>
     <input type="radio" name="pub" value="sbnation"><label>SB Nation</label>
     <input type="radio" name="pub" value="verge"><label>The Verge</label>
     <input type="radio" name="pub" value="polygon"><label>Polygon</label>
     <input type="radio" name="pub" value="eater"><label>Eater</label>
     <input type="radio" name="pub" value="racked"><label>Racked</label>
   </form>
+
+   <h5>Options :</h5>
+     <form>
+      <label for="cdn">Localisation des ressources : (<small>avec le / final</small>)<input type="text" id="cdn" value="https://mvaudano.github.io/quiz-generator/" onClick="this.setSelectionRange(0, this.value.length)" style="width: 370px;"></label><br />
+     <label for="cdn">Compte Twitter (pour le partage) : <input type="text" id="twitter" value="@" onClick="this.setSelectionRange(0, this.value.length)" style="width: 370px;"></label>
+
+    </form>
 
   <div class="embed" style="margin-top: 30px; margin-bottom: 60px;">
     <h5>Générez, copier et coller le code source</h5>
@@ -90,5 +97,7 @@ Sélection sur la page d'accueil du compte twitter pour le partage (variable acc
 <script src="javascripts/jquery.min.js"></script>
 <script src="javascripts/tabletop.js"></script>
 <script src="javascripts/getdata.js"></script>
+<script src="javascripts/jszip.min.js"></script>
+<script src="javascripts/FileSaver.min.js"></script>
   </body>
 </html>
