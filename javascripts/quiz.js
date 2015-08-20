@@ -90,7 +90,7 @@
         trackEvent(
           'q' + qnumber + '-answered-incorrectly',
           'Q' + qnumber + ' answered incorrectly');
-        $(".answer").html("<p>D&eacute;sol&eacute;, mauvaise réponse !</p><p>La bonne r&eacute;ponse &eacute;tait : <span class=\"bonnereponse\">" + input[currentQuestion].bonnereponse + "</span>.</p><p>" + input[currentQuestion].incorrect + "</p>");
+         $(".answer").html("<p>D&eacute;sol&eacute;, mauvaise réponse !</p><p> " + input[currentQuestion].incorrect + "&nbsp;La bonne r&eacute;ponse &eacute;tait&nbsp;:" + input[currentQuestion].answer + ".</p>");
       }
       if (currentQuestion != (input.length-1)) {
         $(".answer").append("<button class='qq-button next'>Suivant</button>");

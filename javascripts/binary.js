@@ -153,7 +153,7 @@
     // }
 
     $(".quiz-container")
-      .html("<div class='scorecard'><p>Vous avez correctement répondu &agrave;</p><p>" + score + "&nbsp; questions sur &nbsp;" + input.length + "</p><div id='social-media'><ul><li><a class=\"fb-share\" href='http://www.facebook.com/sharer.php?u=" + link + "' target='_blank'>" + facebook + "</a></li><li><a class=\"twitter-share\" href='http://twitter.com/home?status=J%27ai obtenu le score de " + score + "/" + input.length + " sur ce quiz" + link + via + "' target='_blank'>" + twitter   + "</a></li><li><a class=\"gplus-share\" href='https://plus.google.com/share?url=" + link + "' target='_blank'>" + google + "</a></li></ul></div><p>Défiez vos amis !</p></div>");
+      .html("<div class='scorecard'><p>Vous avez correctement répondu &agrave;</p><p>" + score + "&nbsp;questions sur&nbsp;" + input.length + "</p><div id='social-media'><ul><li><a class=\"fb-share\" href='http://www.facebook.com/sharer.php?u=" + link + "' target='_blank'>" + facebook + "</a></li><li><a class=\"twitter-share\" href='http://twitter.com/home?status=J%27ai obtenu le score de " + score + "/" + input.length + " sur ce quiz" + link + via + "' target='_blank'>" + twitter   + "</a></li><li><a class=\"gplus-share\" href='https://plus.google.com/share?url=" + link + "' target='_blank'>" + google + "</a></li></ul></div><p>Défiez vos amis !</p></div>");
     $('.quiz-container .fb-share').click(function() {
       trackEvent('shared-on-fb', 'Quiz shared on Facebook');
     });
