@@ -13,7 +13,6 @@
   	for ( var i = 0; i < data.length; i++ ) {
   		input[i] = findUrlinObject( data[i] );
   	}
-    console.log(input);
   	embed(input);
   }
 
@@ -81,19 +80,26 @@
 
   function embed(input) {
     pubStylesheet = cdn+"stylesheets/quiz-" + pub + ".css";
-    embedcode = "&lt;div class='quiz-container'></div>&lt;script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'>&lt;/script>&lt;script type='text/javascript'>var input = " + JSON.stringify(input) + "; var pubStylesheet = '" + pubStylesheet + "'; var pub = '" + pub + "'; var cdn = '" + cdn + "'; var twitteracount = '" + $('input#twitter').val().substring(1) + "'; &lt;/script>&lt;script src='"+cdn+"javascripts/" + quizType + ".js'>&lt;/script>";
+    twitteraccount = (($('input#twitter').val().substring(1) !=="") ? "var twitteracount = \"" + twitteraccount + "\"" : "var twitteracount = \"\"");
+    embedcode = "&lt;div class='quiz-container'></div>&lt;script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'>&lt;/script>&lt;script type='text/javascript'>var input = " + JSON.stringify(input) + "; var pubStylesheet = '" + pubStylesheet + "'; var pub = '" + pub + "'; var cdn = '" + cdn + "'; " + twitteraccount + "; &lt;/script>&lt;script src='"+cdn+"javascripts/" + quizType + ".js'>&lt;/script>";
     $("#embedcode").html(embedcode)
     downloadHTML(input)
     addJS();
   }
 
   function downloadHTML(input) {
-     downloadcode = "<html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n</head>\n<body id=\"articleBody\">\n<div class='quiz-container'></div>\n<script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>\n<script type='text/javascript'>\nvar input = " + JSON.stringify(input) + ";\nvar pubStylesheet = '" + pubStylesheet + "';\nvar pub = '" + pub + "';\nvar cdn = '" + cdn + "';\n</script>\n<script src='"+cdn+"javascripts/" + quizType + ".js'></script>\n</body>\n</html>";
+
+    pubStylesheet = cdn+"stylesheets/quiz-" + pub + ".css";
+    twitteraccount = (($('input#twitter').val().substring(1) !=="") ? "\nvar twitteracount = \"" + twitteraccount + "\"" : "var twitteracount = \"\"");
+     downloadcode = "<html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n</head>\n<body id=\"articleBody\">\n<div class='quiz-container'></div>\n<script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>\n<script type='text/javascript'>\nvar input = " + JSON.stringify(input) + ";\nvar pubStylesheet = '" + pubStylesheet + "';\nvar pub = '" + pub + "';\nvar cdn = '" + cdn + "'; " + twitteraccount + ";\n</script>\n<script src='"+cdn+"javascripts/" + quizType + ".js'></script>\n</body>\n</html>";
+     console.log(downloadcode)
     var zip = new JSZip();
     zip.file("index.html", downloadcode);
+   // zip.file("hello.txt", "Hello World\n");
     var content = zip.generate({type:"blob"});
     $("#downloadhtml").removeAttr("disabled")
     $("#downloadhtml").click(function(){
+        console.log("yo")
        saveAs(content, "quiz.zip");
     })
    
@@ -123,7 +129,7 @@
           submitquiz();
         }
         else {
-          alert("Please choose a quiz type at the top of the page!");
+          alert("Choisissez un type de quiz en haut de la page !");
         }
     })
   })  
