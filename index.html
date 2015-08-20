@@ -52,9 +52,9 @@ Custom CSS
 
   <h5>Choisissez un type de quiz</h5>
   <form>
-    <input type="radio" name="quiz-type" value="quiz"><label>Questionnaire à choix multiples (QCM, 4 réponses possibles)</label><br>
-    <input type="radio" name="quiz-type" value="flowchart"><label>Flowchart  (arbre de décision)</label><br>
-    <input type="radio" name="quiz-type" value="binary"><label>Binaire (vrai/faux, noir/blanc, 2 réponses possibles)</label>
+    <label><input type="radio" name="quiz-type" value="quiz">Questionnaire à choix multiples (QCM, 4 réponses possibles)</label><br>
+    <label><input type="radio" name="quiz-type" value="flowchart">Flowchart  (arbre de décision)</label><br>
+    <label><input type="radio" name="quiz-type" value="binary">Binaire (vrai/faux, noir/blanc, 2 réponses possibles)</label>
   </form> 
   
    <p>Utilisez <a id="quiz-template" target="_new">ce modèle de Google Spreadsheet</a> pour composer votre quiz.</p>
@@ -82,9 +82,14 @@ Custom CSS
     </form>
 
   <div class="embed" style="margin-top: 30px; margin-bottom: 60px;">
-    <h5>Générez, copier et coller le code source</h5>
-    <center><p><button id="build">Générez votre quiz</button><p>
-    <p><textarea type="text" name="embedcode" id="embedcode" style="height: 150px; overflow:auto;"></textarea></center></p>
+    <h5>Générez et intégrez le quiz</h5>
+    <center><p><button id="build">Générez</button><p>
+    <p>Solution #1 (plus facile) : copier-coller le code embed</p>
+    <h6>A coller directement dans le back-office de votre site (ne marchera sûrement pas avec les back-offices limités comme Wordpress) ou dans un fichier HTML en ligne.</h6>
+    <p><textarea type="text" name="embedcode" id="embedcode" style="height: 150px; overflow:auto;"></textarea></p>
+    <p>Solution #2 (recommandée) : Télécharger les fichiers</p>
+    <h6 style="width: 70%; margin: 0% auto;">En cliquant sur le bouton ci-dessous, vous téléchargez l'ensemble des fichiers nécessaires et ne reposez plus sur un serveur distant pour l'hébergement des ressources. Il vous faudra décompresser le .zip et mettre tous les fichiers sur un serveur.</h6>
+    <button id="downloadhtml" disabled="disabled">Télécharger le zip</a></p></center>
   </div>
 
   <h4>Prévisualisation</h4>

@@ -127,7 +127,7 @@
       'Scored ' + score + ' of ' + input.length);
     trackEvent('completed', 'Quiz completed');
     if(twitteraccount !== ""){
-      via = " via "+twitteraccount;
+      via = " via @"+twitteraccount;
     }
     else via = "";
     // switch (pub) {

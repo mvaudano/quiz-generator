@@ -142,8 +142,11 @@ button {
   -webkit-transition: .2s;
   transition: .2s; }
   /* line 161, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/quiz-generator.css.scss */
-  button:hover {
+  button:not(:disabled):hover {
     background-color: #404041; }
+  button:disabled {
+    background-color: #ccc;
+}
 
 /* line 166, /Users/nzhu94/Dev/quiz-generator/source/stylesheets/quiz-generator.css.scss */
 label {

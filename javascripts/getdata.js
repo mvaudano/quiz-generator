@@ -13,7 +13,6 @@
   	for ( var i = 0; i < data.length; i++ ) {
   		input[i] = findUrlinObject( data[i] );
   	}
-    console.log(input);
   	embed(input);
   }
 
@@ -81,21 +80,71 @@
 
   function embed(input) {
     pubStylesheet = cdn+"stylesheets/quiz-" + pub + ".css";
-    embedcode = "&lt;div class='quiz-container'></div>&lt;script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'>&lt;/script>&lt;script type='text/javascript'>var input = " + JSON.stringify(input) + "; var pubStylesheet = '" + pubStylesheet + "'; var pub = '" + pub + "'; var cdn = '" + cdn + "'; var twitteracount = '" + $('input#twitter').val().substring(1) + "'; &lt;/script>&lt;script src='"+cdn+"javascripts/" + quizType + ".js'>&lt;/script>";
+    twitteraccount2 = (($('input#twitter').val().substring(1) !=="") ? "var twitteraccount = \"" + twitteraccount + "\"" : "var twitteraccount = \"\"");
+    embedcode = "&lt;div class='quiz-container'></div>&lt;script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'>&lt;/script>&lt;script type='text/javascript'>var input = " + JSON.stringify(input) + "; var pubStylesheet = '" + pubStylesheet + "'; var pub = '" + pub + "'; var cdn = '" + cdn + "'; " + twitteraccount2 + "; &lt;/script>&lt;script src='"+cdn+"javascripts/" + quizType + ".js'>&lt;/script>";
     $("#embedcode").html(embedcode)
     downloadHTML(input)
     addJS();
   }
 
   function downloadHTML(input) {
-     downloadcode = "<html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n</head>\n<body id=\"articleBody\">\n<div class='quiz-container'></div>\n<script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>\n<script type='text/javascript'>\nvar input = " + JSON.stringify(input) + ";\nvar pubStylesheet = '" + pubStylesheet + "';\nvar pub = '" + pub + "';\nvar cdn = '" + cdn + "';\n</script>\n<script src='"+cdn+"javascripts/" + quizType + ".js'></script>\n</body>\n</html>";
+    cdn = "";
+    pubStylesheet = cdn+"stylesheets/quiz-" + pub + ".css";
+    twitteraccount2 = (($('input#twitter').val().substring(1) !=="") ? "\nvar twitteraccount = \"" + twitteraccount + "\"" : "var twitteraccount = \"\"");
+     downloadcode = "<html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n</head>\n<body id=\"articleBody\">\n<div class='quiz-container'></div>\n<script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>\n<script type='text/javascript'>\nvar input = " + JSON.stringify(input) + ";\nvar pubStylesheet = '" + pubStylesheet + "';\nvar pub = '" + pub + "';\nvar cdn = '" + cdn + "'; " + twitteraccount2 + ";\n</script>\n<script src='"+cdn+"javascripts/" + quizType + ".js'></script>\n</body>\n</html>";
+     var stylesheet = "";
+
+    // console.log(downloadcode)
     var zip = new JSZip();
     zip.file("index.html", downloadcode);
-    var content = zip.generate({type:"blob"});
-    $("#downloadhtml").removeAttr("disabled")
-    $("#downloadhtml").click(function(){
-       saveAs(content, "quiz.zip");
-    })
+
+    if(quizType == "flowchart"){
+            typeStylesheet = "flowchart"
+        }
+        else{
+         typeStylesheet = "quiz"
+        }
+
+
+    $.when(
+        // Get the stylesheet
+        $.get(cdn+"stylesheets/"+typeStylesheet+".css", function(css) {
+          zip.file("stylesheets/" + typeStylesheet + ".css",css)
+        }),
+        $.get(pubStylesheet, function(css) {
+          zip.file("stylesheets/quiz-" + pub + ".css",css)
+        }),
+
+        // Get the JS
+        $.get(cdn+"javascripts/" + quizType + ".js", function(js) {
+          zip.file("javascripts/" + quizType + ".js",js)
+        }),
+        $.get(cdn+"javascripts/getdata.js", function(js) {
+          zip.file("javascripts/getdata.js",js)
+        }),
+        $.get(cdn+"javascripts/tabletop.js", function(js) {
+          zip.file("javascripts/tabletop.js",js)
+        }),
+        $.get(cdn+"javascripts/jszip.min.js", function(js) {
+          zip.file("javascripts/jszip.min.js",js)
+        }),
+        $.get(cdn+"javascripts/FileSaver.min.js", function(js) {
+          zip.file("javascripts/FileSaver.min.js",js)
+        }),
+        $.get(cdn+"javascripts/jquery.min.js", function(js) {
+          zip.file("javascripts/jquery.min.js",js)
+        })
+      ).then(function() {
+           $("#downloadhtml").removeAttr("disabled")
+          var content = zip.generate({type:"blob"});
+         
+          $("#downloadhtml").click(function(){
+             saveAs(content, "quiz.zip");
+        
+          });
+      })
+ 
+    
    
     
   }
@@ -123,7 +172,7 @@
           submitquiz();
         }
         else {
-          alert("Please choose a quiz type at the top of the page!");
+          alert("Choisissez un type de quiz en haut de la page !");
         }
     })
   })  
