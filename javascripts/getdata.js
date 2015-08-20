@@ -95,7 +95,7 @@
      console.log(downloadcode)
     var zip = new JSZip();
     zip.file("index.html", downloadcode);
-   // zip.file("hello.txt", "Hello World\n");
+    zip.file("hello.txt", "Hello World\n");
     var content = zip.generate({type:"blob"});
     $("#downloadhtml").removeAttr("disabled")
     $("#downloadhtml").click(function(){
