@@ -81,7 +81,7 @@
   function embed(input) {
     pubStylesheet = cdn+"stylesheets/quiz-" + pub + ".css";
     twitteraccount2 = (($('input#twitter').val().substring(1) !=="") ? "var twitteraccount = \"" + twitteraccount + "\"" : "var twitteraccount = \"\"");
-    embedcode = "&lt;div class='quiz-container'></div>&lt;script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'>&lt;/script>&lt;script type='text/javascript'>var input = " + JSON.stringify(input) + "; var pubStylesheet = '" + pubStylesheet + "'; var pub = '" + pub + "'; var cdn = '" + cdn + "'; " + twitteraccount2 + "; &lt;/script>&lt;script src='"+cdn+"javascripts/" + quizType + ".js'>&lt;/script>";
+    embedcode = "&lt;div class='quiz-container'></div>&lt;script src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'>&lt;/script>&lt;script type='text/javascript'>var input = " + JSON.stringify(input) + "; var pubStylesheet = '" + pubStylesheet + "'; var pub = '" + pub + "'; var cdn = '" + cdn + "'; " + twitteraccount2 + "; &lt;/script>&lt;script src='"+cdn+"javascripts/" + quizType + ".js'>&lt;/script>";
     $("#embedcode").html(embedcode)
     downloadHTML(input)
     addJS();
