@@ -18,6 +18,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 
 <!-- TODO
+Téléchargement du zip avec les fichiers
 Traduction
 Sélection sur la page d'accueil du compte twitter pour le partage (variable account) -->
 
@@ -46,23 +47,23 @@ Sélection sur la page d'accueil du compte twitter pour le partage (variable acc
 </div>
 
 <div class="container">
-  <h4> Write your quiz</h4>
+  <h4>Composez votre quiz</h4>
 
-  <h5>Choose a Quiz Type</h5>
+  <h5>Choisissez un type de quiz</h5>
   <form>
-    <input type="radio" name="quiz-type" value="quiz"><label>Multiple Choice</label>
-    <input type="radio" name="quiz-type" value="flowchart"><label>Flowchart</label>
-    <input type="radio" name="quiz-type" value="binary"><label>True/False</label>
+    <label><input type="radio" name="quiz-type" value="quiz">Questionnaire à choix multiples (QCM, 4 réponses possibles)</label><br />
+    <label><input type="radio" name="quiz-type" value="flowchart"><label>Flowchart (arbre de décision)</label><br />
+    <label><input type="radio" name="quiz-type" value="binary">Binaire (vrai/faux, noir/blanc, 2 réponses possibles)</label>
   </form> 
-  
-  <p>Use <a id="quiz-template" target="_new">this Google Spreadsheet template</a> to write your quiz.</p>
-  <p>Once you're done editing, publish the spreadsheet to the web. Under the <b>"File"</b> menu, select <b>"Publish to the Web."</b> Click <b>"Start Publishing"</b> and copy the URL to build the quiz.</p>
-  <center><p style="font-size:0.8em">Want to test it out? Try this spreadsheet:<br><textarea style="overflow:auto;" rows="1" id="example-spreadsheet"></textarea></p></center>
+  <p>&nbsp;</p>
+  <p>Utilisez <a id="quiz-template" target="_new">ce modèle de Google Spreadsheet</a> pour composer votre quiz.</p>
+  <p>Une fois que vous l'avez édité, publiez votre spreadsheet sur le web ("Fichier" > "Publier sur le web" > <b>Commencer à publier) et récupérez l'URL du spreadsheet.</p>
+  <center><p style="font-size:0.8em">Envie de tester ? Essayez ce spreadsheet :<br><textarea style="overflow:auto;" rows="1" id="example-spreadsheet"></textarea></p></center>
 
-  <h5> Enter your spreadsheet</h5>
-  <p>Copy and paste your spreadsheet's URL here: <input type="text" id="url"></p>
+  <h5> Renseignez votre spreadsheet</h5>
+  <p>Collez ici l'URL de votre spreadsheet : <input type="text" id="url"></p>
 
-  <h5> Select your vertical</h5>
+  <h5> Selectionnez votre thème</h5>
   <form>
     <input type="radio" name="pub" value="vox"><label>Vox</label>
     <input type="radio" name="pub" value="sbnation"><label>SB Nation</label>
@@ -73,12 +74,12 @@ Sélection sur la page d'accueil du compte twitter pour le partage (variable acc
   </form>
 
   <div class="embed" style="margin-top: 30px; margin-bottom: 60px;">
-    <h5>Generate, copy and paste this code into Chorus</h5>
-    <center><p><button id="build">Generate your quiz</button><p>
+    <h5>Générez, copier et coller le code source</h5>
+    <center><p><button id="build">Générez votre quiz</button><p>
     <p><textarea type="text" name="embedcode" id="embedcode" style="height: 150px; overflow:auto;"></textarea></center></p>
   </div>
 
-  <h4>Preview</h4>
+  <h4>Prévisualisation</h4>
 
 </div>
 
