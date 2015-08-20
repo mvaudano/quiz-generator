@@ -27,6 +27,7 @@
     }, 1000);
   };
 
+
   // write questions and answers on html
   var buildQuiz = function (input) {
     if (currentQuestion != 0) {
