@@ -133,23 +133,27 @@
   // social media sharing
   var link = document.URL;
   var shareQuiz = function() {
-    switch (pub) {
-      case 'vox':
-        account = voxdotcom;
-        break;
-      case 'sbnation':
-        account = sbnation;
-        break;
-      case 'verge':
-        account = theverge;
-        break;
-      case 'polygon':
-        account = polygon;
-        break;
-      default:
-        account = 'voxproduct';
+    if(twitteraccount !== ""){
+      via = " via "+twitteraccount;
     }
-    $(".quiz-container").append("<div class='scorecard'><div id='social-media'><ul><li><a href='http://www.facebook.com/sharer.php?u=" + link + "' target='_blank'>" + facebook + "</a></li><li><a href='http://twitter.com/home?status=Check out this flowchart " + link + " via @" +  account + "' target='_blank'>" + twitter   + "</a></li><li><a href='https://plus.google.com/share?url=" + link + "' target='_blank'>" + google + "</a></li></ul></div></div>");
+    else via = "";
+    // switch (pub) {
+    //   case 'vox':
+    //     account = voxdotcom;
+    //     break;
+    //   case 'sbnation':
+    //     account = sbnation;
+    //     break;
+    //   case 'verge':
+    //     account = theverge;
+    //     break;
+    //   case 'polygon':
+    //     account = polygon;
+    //     break;
+    //   default:
+    //     account = 'voxproduct';
+    // }
+    $(".quiz-container").append("<div class='scorecard'><div id='social-media'><ul><li><a href='http://www.facebook.com/sharer.php?u=" + link + "' target='_blank'>" + facebook + "</a></li><li><a href='http://twitter.com/home?status=Regardez ce flowchart " + link +  via + "' target='_blank'>" + twitter   + "</a></li><li><a href='https://plus.google.com/share?url=" + link + "' target='_blank'>" + google + "</a></li></ul></div></div>");
 
     $('.quiz-container .fb-share').click(function() {
       trackEvent('shared-on-fb', 'Quiz shared on Facebook');
@@ -163,7 +167,7 @@
   };
 
   // attach quiz and vertical-specific stylesheets
-  $('head').append('<link rel="stylesheet" href="stylesheets/flowchart.css" type="text/css" />');
+  $('head').append('<link rel="stylesheet" href="'+cdn+'stylesheets/flowchart.css" type="text/css" />');
   // $('head').append('<link rel="stylesheet" href="/stylesheets/flowchart.css" type="text/css" />');
   $('head').append('<link rel="stylesheet" href="' + pubStylesheet + '" type="text/css" />');
 
